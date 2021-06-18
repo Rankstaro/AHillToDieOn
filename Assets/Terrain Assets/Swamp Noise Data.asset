@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Swamp Noise Data
   m_EditorClassIdentifier: 
   autoUpdate: 1
-  noiseScale: 5
+  noiseScale: 2.66
   octaves: 4
-  persistance: 0.699
-  lacunarity: 1.49
+  persistance: 0.5
+  lacunarity: 1
   randomSeed: 1
   seed: 0
   offset: {x: 0, y: 0}
   useFalloff: 1
-  av: 5.17
-  bv: 1.4
+  av: 25
+  bv: 2

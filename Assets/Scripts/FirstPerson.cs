@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using MLAPI;
 
 [RequireComponent(typeof(CharacterController))]
-public class FirstPerson : MonoBehaviour
+public class FirstPerson : NetworkBehaviour
 {
 	public bool lockCursor;
 
@@ -13,99 +14,58 @@ public class FirstPerson : MonoBehaviour
 	const float sneakSpeed = 2;
 	const float walkSpeed = 4;
 	const float runSpeed = 8;
-	float moveSpeed;
-	public bool sneaking, running;
+	float moveSpeed = walkSpeed;
+	[System.NonSerialized]
+	public bool sneaking, running, jumping = false;
 
 	public float fov;
 	public Vector2 mouseSensitivity = new Vector2(1, 1);
+	public Transform camTrans;
 	public Camera cam;
+	public PostProcessVolume ppv;
 	CharacterController controller;
 	float pitch;
 
 	float velocityY;
-	Vector3 jumpDir;
+	Vector3 jumpDir, moveDir;
 
 	Vignette vignette;
 
 	void Start()
 	{
-		controller = GetComponent<CharacterController>();
-		PostProcessVolume ppv = GameObject.Find("Post-Process Volume").GetComponent<PostProcessVolume>();
 		vignette = ppv.profile.GetSetting<Vignette>();
-		cam = GetComponentInChildren<Camera>();
+		cam = camTrans.GetComponent<Camera>();
 
-		if (lockCursor)
+		if (!IsLocalPlayer)
 		{
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
+			camTrans.GetComponent<AudioListener>().enabled = false;
+			cam.enabled = false;
+			ppv.enabled = false;
+		}
+		else
+		{
+			controller = GetComponent<CharacterController>();
+			if (lockCursor)
+			{
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+			}
+
 		}
 	}
 
 
 	void Update()
 	{
-		Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-		moveSpeed = walkSpeed;
-
-		moveCamera();
-
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (IsLocalPlayer)
 		{
-			Application.Quit();
+			moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+			moveCamera();
+			getInputs();
+			movePlayer();
 		}
-		if (Input.GetKey(KeyCode.LeftShift))
-		{
-			if (!sneaking)
-			{
-				running = true;
-				StartCoroutine(runTransition());
-			}
-		}
-		if (Input.GetKeyUp(KeyCode.LeftShift))
-		{
-			running = false;
-			StartCoroutine(runTransition());
-		}
-		if (Input.GetKey(KeyCode.LeftControl))
-		{
-			sneaking = true;
-			running = false;
-			StartCoroutine(sneakTransition());
-		}
-		if (Input.GetKeyUp(KeyCode.LeftControl))
-		{
-			sneaking = false;
-			StartCoroutine(sneakTransition());
-		}
-		if (Input.GetKey(KeyCode.S))
-		{
-			moveSpeed = sneakSpeed;
-		}
-		if (Input.GetKeyUp(KeyCode.S))
-		{
-			moveSpeed = walkSpeed;
-		}
-
-		if (controller.isGrounded)
-		{
-			velocityY = -gravity;
-			if (Input.GetKeyDown(KeyCode.Space) && !sneaking)
-			{
-				velocityY = jumpForce;
-			}
-		}
-		else
-		{
-			moveDir = jumpDir;
-		}
-
-
-		velocityY -= gravity * Time.deltaTime;
-		Vector3 velocity = transform.TransformDirection(moveDir) * moveSpeed + Vector3.up * velocityY;
-		controller.Move(velocity * Time.deltaTime);
-		jumpDir = moveDir;
-
 	}
+
 
 	public void moveCamera()
 	{
@@ -124,6 +84,65 @@ public class FirstPerson : MonoBehaviour
 		if (angle > 360f)
 			angle -= 360f;
 		return Mathf.Clamp(angle, min, max);
+	}
+
+	public void getInputs()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			if (!sneaking)
+			{
+				running = true;
+				StartCoroutine(runTransition());
+			}
+		}
+		if (Input.GetKeyUp(KeyCode.LeftShift))
+		{
+			running = false;
+			StartCoroutine(runTransition());
+		}
+		if (Input.GetKey(KeyCode.LeftControl) && !jumping)
+		{
+			sneaking = true;
+			running = false;
+			StartCoroutine(sneakTransition());
+		}
+		if (Input.GetKeyUp(KeyCode.LeftControl))
+		{
+			sneaking = false;
+			StartCoroutine(sneakTransition());
+		}
+
+		if (Input.GetKey(KeyCode.S)) moveSpeed = sneakSpeed;
+		if (Input.GetKeyUp(KeyCode.S)) moveSpeed = walkSpeed;
+
+		if (controller.isGrounded)
+		{
+			jumping = false;
+			velocityY = -gravity;
+			if (Input.GetKeyDown(KeyCode.Space) && !sneaking)
+			{
+				jumping = true;
+				velocityY = jumpForce;
+			}
+		}
+		else
+		{
+			moveDir = jumpDir;
+		}
+	}
+
+	public void movePlayer()
+	{
+		velocityY -= gravity * Time.deltaTime;
+		Vector3 velocity = transform.TransformDirection(moveDir) * moveSpeed + Vector3.up * velocityY;
+		controller.Move(velocity * Time.deltaTime);
+		jumpDir = moveDir;
 	}
 
 	IEnumerator sneakTransition()
