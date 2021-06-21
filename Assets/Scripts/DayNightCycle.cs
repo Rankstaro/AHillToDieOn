@@ -5,10 +5,18 @@ using UnityEngine;
 public class DayNightCycle : MonoBehaviour
 {
     public bool isDay = false;
-    public float timeSpeed = 10f;
+    public float timeSpeed = 1f;
     public GameObject sun;
     public GameObject moon;
     public GameObject stars;
+
+    public void Awake()
+    {
+        if (!isDay)
+        {
+            setNight();
+        }
+    }
 
     private void Update()
     {
@@ -34,19 +42,13 @@ public class DayNightCycle : MonoBehaviour
 
     }
 
-    public void Awake()
+    public void setNight()
     {
-        if (!isDay)
-        {
-            swapPosition(sun);
-            swapPosition(moon);
-        }
-    }
-
-    public void swapPosition(GameObject lightSource)
-    {
-        lightSource.transform.position = new Vector3(lightSource.transform.position.x, lightSource.transform.position.y * -1, lightSource.transform.position.z);
-        lightSource.transform.LookAt(Vector3.zero);
+        Vector3 temp = sun.transform.position;
+        sun.transform.position = moon.transform.position;
+        moon.transform.position = temp;
+        sun.transform.LookAt(Vector3.zero);
+        moon.transform.LookAt(Vector3.zero);
     }
 
     public void orbit(GameObject lightSource)

@@ -8,9 +8,13 @@ ScriptsOnlyBuild:
     - MapGenerator
     - MenuCamera
     - NoiseData
+    - PauseMenu
     - StartMenu
     - TerrainData
+    - TerrainGenerator
     - TextureData
+    Photon Realtime MLAPI Transport.dll:
+    - Photon.Realtime.PhotonAppSettings
     Unity.Multiplayer.MLAPI.Prototyping.dll:
     - MLAPI.Prototyping.NetworkTransform
     Unity.Multiplayer.MLAPI.Runtime.dll:
@@ -27,6 +31,7 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -48,6 +53,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.RectMask2D
   sceneClasses:
     Assets/Scenes/Scene.unity:
     - Class: 1
@@ -83,65 +90,77 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1672}
+      Script: {instanceID: 1614}
     - Class: 114
-      Script: {instanceID: 1698}
+      Script: {instanceID: 1682}
     - Class: 114
-      Script: {instanceID: 1840}
+      Script: {instanceID: 1708}
     - Class: 114
-      Script: {instanceID: 1860}
+      Script: {instanceID: 1712}
     - Class: 114
-      Script: {instanceID: 2072}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 2124}
+      Script: {instanceID: 1876}
     - Class: 114
-      Script: {instanceID: 2292}
+      Script: {instanceID: 2096}
     - Class: 114
-      Script: {instanceID: 2340}
+      Script: {instanceID: 2150}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 2320}
     - Class: 114
-      Script: {instanceID: 2562}
+      Script: {instanceID: 2368}
     - Class: 114
-      Script: {instanceID: 2576}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2596}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3052}
+      Script: {instanceID: 2998}
     - Class: 114
-      Script: {instanceID: 3208}
+      Script: {instanceID: 3026}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3096}
     - Class: 114
-      Script: {instanceID: 3564}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 3640}
+      Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 3928}
+      Script: {instanceID: 3626}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 4222}
+      Script: {instanceID: 3706}
     - Class: 114
-      Script: {instanceID: 4292}
+      Script: {instanceID: 4002}
     - Class: 114
-      Script: {instanceID: 4334}
+      Script: {instanceID: 4120}
     - Class: 114
-      Script: {instanceID: 4592}
+      Script: {instanceID: 4138}
     - Class: 114
-      Script: {instanceID: 4622}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4742}
+      Script: {instanceID: 4310}
+    - Class: 114
+      Script: {instanceID: 4380}
+    - Class: 114
+      Script: {instanceID: 4422}
+    - Class: 114
+      Script: {instanceID: 4544}
+    - Class: 114
+      Script: {instanceID: 4688}
+    - Class: 114
+      Script: {instanceID: 4718}
+    - Class: 114
+      Script: {instanceID: 4842}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -201,7 +220,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 6b2fe0f80f92fc32eacfa7825b1ba907
+      Hash: 8109ad35a08c78f70e2046c8ad5b3a0c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartMenu
@@ -267,7 +286,7 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
-      Hash: dff4fe9ff61e23e58f13ddb28884e459
+      Hash: 27cc493b3c4ff5be3040d4850d3c03ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MapDisplay
@@ -319,6 +338,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Photon Realtime MLAPI Transport.dll
+    namespaceName: Photon.Realtime.Editor
+    className: WizardWindow
   - hash:
       serializedVersion: 2
       Hash: 584beb25c911f20ab47aa1eeaf182d55
@@ -405,6 +430,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: c5fd97cc10b89deaf7c60af66a6b0d5a
+    assemblyName: Photon Realtime MLAPI Transport.dll
+    namespaceName: Photon.Realtime
+    className: SupportLogger
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -487,6 +518,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 6946de2bd3a299f1832331cf92913f00
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InitializeWorld
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -577,6 +614,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
     namespaceName: MLAPI
     className: NetworkManager
+  - hash:
+      serializedVersion: 2
+      Hash: b3d0e2e69666314f58686be82268eac0
+    assemblyName: Photon Realtime MLAPI Transport.dll
+    namespaceName: Photon.Realtime
+    className: PhotonAppSettings
   - hash:
       serializedVersion: 2
       Hash: 34432c2a124a26f51569ac01fc6fcc4a
@@ -693,6 +736,24 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: a68d907ad35f5d27438dcbdf4eda0a8e
+    assemblyName: Photon Realtime MLAPI Transport.dll
+    namespaceName: MLAPI.Transports.PhotonRealtime
+    className: PhotonRealtimeTransport
+  - hash:
+      serializedVersion: 2
+      Hash: 11df54cb47bd74c537f3c732a94ea97d
+    assemblyName: Photon Realtime MLAPI Transport.dll
+    namespaceName: Photon.Realtime
+    className: ConnectionHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 810e26919ce347fe126989a29dc7650f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseMenu
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -741,6 +802,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 0f99a4145fb21a2650f2d9ce84bffb4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TerrainGenerator
+  - hash:
+      serializedVersion: 2
       Hash: 63d7b9b64a11859f416d72ba9a3c3fec
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -759,7 +826,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 2c4069c5331765eee3d175b8768def93
+      Hash: 057b5d0608e8f22c6dbc0430e3f78a25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FirstPerson

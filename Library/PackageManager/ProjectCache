@@ -5,70 +5,21 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637595885552410071
-    m_Hash: 1976748352
+      ticks: 637598738386611937
+    m_Hash: 3612187057
   m_LockFileStatus:
     m_FilePath: D:/GitHub/Graveyard/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637595885553758982
-    m_Hash: 574750751
+      ticks: 637598738387292090
+    m_Hash: 3420853185
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
-    - packageId: com.hwaet.projectcloner@https://github.com/hwaet/UnityProjectCloner.git
-      testable: 0
-      isDirectDependency: 1
-      version: 0.0.1
-      source: 5
-      resolvedPath: D:\GitHub\Graveyard\Library\PackageCache\com.hwaet.projectcloner@2b7497d79e
-      assetPath: Packages/com.hwaet.projectcloner
-      name: com.hwaet.projectcloner
-      displayName: Project Cloner
-      author:
-        name: 
-        email: 
-        url: 
-      category: Unity
-      type: 
-      description: A tool to let the user quickly clone their project, for multiplayer
-        testing.
-      status: 4
-      errors: []
-      versions:
-        all: []
-        compatible: []
-        verified: 
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - multiplayer
-      - unity
-      - editor
-      registry:
-        id: 
-        name: 
-        url: 
-        scopes: []
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 0
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 0
-      documentationUrl: 
-      hasRepository: 0
-      repository:
-        type: 
-        url: 
-        revision: 
-        path: 
     - packageId: com.unity.collab-proxy@1.5.7
       testable: 0
       isDirectDependency: 1
@@ -1018,6 +969,57 @@ m_PackageAssets:
       - ugui
       - Unity UI
       - Canvas
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
+    - packageId: com.veriorpies.parrelsync@https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync
+      testable: 0
+      isDirectDependency: 1
+      version: 1.5.0
+      source: 5
+      resolvedPath: D:\GitHub\Graveyard\Library\PackageCache\com.veriorpies.parrelsync@95a062cb14
+      assetPath: Packages/com.veriorpies.parrelsync
+      name: com.veriorpies.parrelsync
+      displayName: ParrelSync
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: ParrelSync is a Unity editor extension that allows users to test
+        multiplayer gameplay without building the project by having another Unity
+        editor window opened and mirror the changes from the original project.
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - Networking
+      - Utils
+      - Editor
+      - Extensions
       registry:
         id: 
         name: 

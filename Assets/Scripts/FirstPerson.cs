@@ -23,6 +23,7 @@ public class FirstPerson : NetworkBehaviour
 	public Transform camTrans;
 	public Camera cam;
 	public PostProcessVolume ppv;
+	public MeshRenderer playerMesh;
 	CharacterController controller;
 	float pitch;
 
@@ -33,7 +34,6 @@ public class FirstPerson : NetworkBehaviour
 
 	void Start()
 	{
-		vignette = ppv.profile.GetSetting<Vignette>();
 		cam = camTrans.GetComponent<Camera>();
 
 		if (!IsLocalPlayer)
@@ -44,13 +44,14 @@ public class FirstPerson : NetworkBehaviour
 		}
 		else
 		{
+			playerMesh.enabled = false;
+			vignette = ppv.profile.GetSetting<Vignette>();
 			controller = GetComponent<CharacterController>();
 			if (lockCursor)
 			{
 				Cursor.lockState = CursorLockMode.Locked;
 				Cursor.visible = false;
 			}
-
 		}
 	}
 
@@ -59,9 +60,24 @@ public class FirstPerson : NetworkBehaviour
 	{
 		if (IsLocalPlayer)
 		{
-			moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-			moveCamera();
-			getInputs();
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				if (PauseMenu.paused == false)
+				{
+					PauseMenu.Pause();
+				}
+				else
+				{
+					PauseMenu.Resume();
+				}
+			}
+
+			if (PauseMenu.paused == false)
+			{			
+				moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+				moveCamera();
+				getInputs();
+			}
 			movePlayer();
 		}
 	}
@@ -88,11 +104,6 @@ public class FirstPerson : NetworkBehaviour
 
 	public void getInputs()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
-		}
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
 			if (!sneaking)

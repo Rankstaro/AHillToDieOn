@@ -15,5 +15,15 @@
  * *Planks:*  Are created by putting logs into the sawmill. The sawmill requires energy.
  * *Treasure:*  Is used to trade with the trader, who comes every 3 days. The trader sells all of the above. Buy wisely!
 
- *Trello Board*
- https://trello.com/b/xZGRkcS9/graveyard
+## Packages
+ To install packages: Window \-\> Package Manager \-\> \+ (Top left button) \-\> Add Package from git URL
+ * ParrelSync: Allows for cloning projects, makes testing multiplayer easier
+ https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync 
+ * MLAPI: Multiplayer Package
+ https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi.git?path=/com.unity.multiplayer.mlapi#release/0.1.0
+ * Post Processing: Included under Unity Technologies
+
+## Links
+*[Trello Board](https://trello.com/b/xZGRkcS9/graveyard)*
+*[My Website](https://rankstaro.github.io)*
+ 
