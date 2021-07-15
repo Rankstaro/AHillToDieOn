@@ -4,44 +4,48 @@ using UnityEngine;
 
 public class Flickering : MonoBehaviour
 {
+    public float rangeMax, rangeMin, lanternIntensity, glowSpeed;
     private Light lantern;
     private bool up;
 
     void Start()
     {
         lantern = GetComponent<Light>();
-        InvokeRepeating("flicker", .01f, 3.0f);
+        StartCoroutine(flicker());
     }
     private void Update()
     {
-        if (lantern.range >= 12)
+        if (lantern.isActiveAndEnabled)
         {
-            up = false;
-        }
-        else if (lantern.range <= 8)
-        {
-            up = true;
-        }
-        if (up)
-        {
-            lantern.range += 0.01f;
-        }
-        else
-        {
-            lantern.range -= 0.01f;
+            if (lantern.range >= rangeMax)
+            {
+                up = false;
+            }
+            else if (lantern.range <= rangeMin)
+            {
+                up = true;
+            }
+            if (up)
+            {
+                lantern.range += glowSpeed * Time.deltaTime;
+            }
+            else
+            {
+                lantern.range -= glowSpeed * Time.deltaTime;
+            }
         }
     }
 
-    public void flicker()
+    IEnumerator flicker()
     {
-        lantern.intensity = Random.Range(1.7f, 2f);
-        StartCoroutine(wait());
-    }
-
-    IEnumerator wait()
-    {
-        yield return new WaitForSeconds(0.1f);
-        lantern.intensity = 2f;
+        while (lantern.isActiveAndEnabled)
+        {
+            lantern.intensity = lanternIntensity;
+            yield return new WaitForSeconds(3.0f);
+            lantern.intensity = Random.Range(lanternIntensity - 0.3f, lanternIntensity);
+            yield return new WaitForSeconds(0.1f);
+            lantern.intensity = lanternIntensity;
+        }
     }
 
 }

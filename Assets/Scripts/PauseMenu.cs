@@ -7,6 +7,7 @@ using MLAPI.Transports.UNET;
 public class PauseMenu : NetworkBehaviour
 {
     public GameObject startMenu;
+    public GameObject settingsBackMenu;
     public GameObject settingsMenu;
     public GameObject pauseMenu;
     public GameObject quitMenu;
@@ -41,6 +42,7 @@ public class PauseMenu : NetworkBehaviour
     public void Settings()
     {
         pauseMenuStatic.SetActive(false);
+        settingsBackMenu.SetActive(true);
         settingsMenu.SetActive(true);
     }
 
@@ -53,6 +55,7 @@ public class PauseMenu : NetworkBehaviour
     public void SettingsBack()
     {
         pauseMenuStatic.SetActive(true);
+        settingsBackMenu.SetActive(false);
         settingsMenu.SetActive(false);
     }
 

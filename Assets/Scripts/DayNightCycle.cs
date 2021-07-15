@@ -14,14 +14,14 @@ public class DayNightCycle : MonoBehaviour
     {
         if (!isDay)
         {
-            setNight();
+            SetNight();
         }
     }
 
     private void Update()
     {
-        orbit(sun);
-        orbit(moon);
+        Orbit(sun);
+        Orbit(moon);
 
         if (sun.transform.position.y <= 0)
         {
@@ -34,15 +34,17 @@ public class DayNightCycle : MonoBehaviour
         if (!isDay)
         {
             stars.SetActive(true);
+            StartCoroutine(Sunset());
         }
         else
         {
             stars.SetActive(false);
+            StartCoroutine(Sunrise());
         }
 
     }
 
-    public void setNight()
+    public void SetNight()
     {
         Vector3 temp = sun.transform.position;
         sun.transform.position = moon.transform.position;
@@ -51,9 +53,27 @@ public class DayNightCycle : MonoBehaviour
         moon.transform.LookAt(Vector3.zero);
     }
 
-    public void orbit(GameObject lightSource)
+    public void Orbit(GameObject lightSource)
     {
         lightSource.transform.RotateAround(Vector3.zero, Vector3.right, timeSpeed * Time.deltaTime);
         lightSource.transform.LookAt(Vector3.zero);
+    }
+
+    IEnumerator Sunset()
+    {
+        while(sun.GetComponent<Light>().intensity > 0.01)
+        {
+            sun.GetComponent<Light>().intensity -= 0.001f;
+        }
+        yield return null;
+    }
+
+    IEnumerator Sunrise()
+    {
+        while (sun.GetComponent<Light>().intensity < 1)
+        {
+            sun.GetComponent<Light>().intensity += 0.001f;
+        }
+        yield return null;
     }
 }

@@ -9,12 +9,11 @@ ScriptsOnlyBuild:
     - MenuCamera
     - NoiseData
     - PauseMenu
+    - SettingsMenu
     - StartMenu
     - TerrainData
     - TerrainGenerator
     - TextureData
-    Photon Realtime MLAPI Transport.dll:
-    - Photon.Realtime.PhotonAppSettings
     Unity.Multiplayer.MLAPI.Prototyping.dll:
     - MLAPI.Prototyping.NetworkTransform
     Unity.Multiplayer.MLAPI.Runtime.dll:
@@ -22,10 +21,20 @@ ScriptsOnlyBuild:
     - MLAPI.NetworkObject
     - MLAPI.Transports.UNET.UNetTransport
     Unity.Postprocessing.Runtime.dll:
+    - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
+    - UnityEngine.Rendering.PostProcessing.AutoExposure
+    - UnityEngine.Rendering.PostProcessing.Bloom
+    - UnityEngine.Rendering.PostProcessing.ChromaticAberration
+    - UnityEngine.Rendering.PostProcessing.ColorGrading
+    - UnityEngine.Rendering.PostProcessing.DepthOfField
+    - UnityEngine.Rendering.PostProcessing.Grain
+    - UnityEngine.Rendering.PostProcessing.LensDistortion
+    - UnityEngine.Rendering.PostProcessing.MotionBlur
     - UnityEngine.Rendering.PostProcessing.PostProcessLayer
     - UnityEngine.Rendering.PostProcessing.PostProcessProfile
     - UnityEngine.Rendering.PostProcessing.PostProcessResources
     - UnityEngine.Rendering.PostProcessing.PostProcessVolume
+    - UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
     - UnityEngine.Rendering.PostProcessing.Vignette
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -55,6 +64,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/Scene.unity:
     - Class: 1
@@ -90,77 +101,89 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1592}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1614}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 1682}
+      Script: {instanceID: 1672}
     - Class: 114
-      Script: {instanceID: 1708}
+      Script: {instanceID: 1684}
     - Class: 114
-      Script: {instanceID: 1712}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1856}
+      Script: {instanceID: 1702}
     - Class: 114
-      Script: {instanceID: 1876}
+      Script: {instanceID: 1750}
     - Class: 114
-      Script: {instanceID: 2096}
+      Script: {instanceID: 1840}
     - Class: 114
-      Script: {instanceID: 2150}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 2320}
+      Script: {instanceID: 2074}
     - Class: 114
-      Script: {instanceID: 2368}
+      Script: {instanceID: 2126}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2294}
     - Class: 114
-      Script: {instanceID: 2596}
+      Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2654}
+      Script: {instanceID: 2564}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2578}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2622}
     - Class: 114
-      Script: {instanceID: 2998}
+      Script: {instanceID: 2734}
     - Class: 114
-      Script: {instanceID: 3026}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 2798}
     - Class: 114
-      Script: {instanceID: 3256}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 3506}
+      Script: {instanceID: 2964}
     - Class: 114
-      Script: {instanceID: 3626}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 3636}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 4002}
+      Script: {instanceID: 3460}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 3580}
     - Class: 114
-      Script: {instanceID: 4138}
+      Script: {instanceID: 3656}
     - Class: 114
-      Script: {instanceID: 4198}
+      Script: {instanceID: 3944}
     - Class: 114
-      Script: {instanceID: 4310}
+      Script: {instanceID: 4062}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4080}
     - Class: 114
-      Script: {instanceID: 4422}
+      Script: {instanceID: 4136}
     - Class: 114
-      Script: {instanceID: 4544}
+      Script: {instanceID: 4242}
     - Class: 114
-      Script: {instanceID: 4688}
+      Script: {instanceID: 4312}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4330}
     - Class: 114
-      Script: {instanceID: 4842}
+      Script: {instanceID: 4354}
+    - Class: 114
+      Script: {instanceID: 4474}
+    - Class: 114
+      Script: {instanceID: 4616}
+    - Class: 114
+      Script: {instanceID: 4646}
+    - Class: 114
+      Script: {instanceID: 4766}
+    - Class: 114
+      Script: {instanceID: 4800}
+    - Class: 114
+      Script: {instanceID: 47080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -220,7 +243,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 8109ad35a08c78f70e2046c8ad5b3a0c
+      Hash: 47ab629ddb765423c9c8366dee9a3e08
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartMenu
@@ -340,12 +363,6 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: cd0ecdca0166232906c6f2df9dddc3d3
-    assemblyName: Photon Realtime MLAPI Transport.dll
-    namespaceName: Photon.Realtime.Editor
-    className: WizardWindow
-  - hash:
-      serializedVersion: 2
       Hash: 584beb25c911f20ab47aa1eeaf182d55
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -430,10 +447,10 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: c5fd97cc10b89deaf7c60af66a6b0d5a
-    assemblyName: Photon Realtime MLAPI Transport.dll
-    namespaceName: Photon.Realtime
-    className: SupportLogger
+      Hash: 19b00cbf4cd2167af29381401536d48d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsMenu
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -502,7 +519,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0beb0936964056d3fbebce2df1b73bb4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Flickering
@@ -518,12 +535,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
-  - hash:
-      serializedVersion: 2
-      Hash: 6946de2bd3a299f1832331cf92913f00
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: InitializeWorld
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -614,12 +625,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Multiplayer.MLAPI.Runtime.dll
     namespaceName: MLAPI
     className: NetworkManager
-  - hash:
-      serializedVersion: 2
-      Hash: b3d0e2e69666314f58686be82268eac0
-    assemblyName: Photon Realtime MLAPI Transport.dll
-    namespaceName: Photon.Realtime
-    className: PhotonAppSettings
   - hash:
       serializedVersion: 2
       Hash: 34432c2a124a26f51569ac01fc6fcc4a
@@ -736,19 +741,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: a68d907ad35f5d27438dcbdf4eda0a8e
-    assemblyName: Photon Realtime MLAPI Transport.dll
-    namespaceName: MLAPI.Transports.PhotonRealtime
-    className: PhotonRealtimeTransport
-  - hash:
-      serializedVersion: 2
-      Hash: 11df54cb47bd74c537f3c732a94ea97d
-    assemblyName: Photon Realtime MLAPI Transport.dll
-    namespaceName: Photon.Realtime
-    className: ConnectionHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 810e26919ce347fe126989a29dc7650f
+      Hash: 4ccea20a5aa5cf76c397733a60fc87b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
@@ -802,7 +795,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 0f99a4145fb21a2650f2d9ce84bffb4f
+      Hash: b9a9302e9abb8350732c34c2b8265336
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TerrainGenerator
