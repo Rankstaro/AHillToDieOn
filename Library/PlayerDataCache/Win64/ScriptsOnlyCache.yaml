@@ -4,6 +4,8 @@ ScriptsOnlyBuild:
     - DayNightCycle
     - FirstPerson
     - Flickering
+    - GenerateWorld
+    - LoadingMenu
     - MapDisplay
     - MapGenerator
     - MenuCamera
@@ -94,6 +96,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -113,77 +119,81 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1702}
     - Class: 114
-      Script: {instanceID: 1750}
+      Script: {instanceID: 1752}
     - Class: 114
-      Script: {instanceID: 1840}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 1860}
+      Script: {instanceID: 1862}
     - Class: 114
-      Script: {instanceID: 2074}
+      Script: {instanceID: 2084}
     - Class: 114
-      Script: {instanceID: 2126}
+      Script: {instanceID: 2136}
     - Class: 114
-      Script: {instanceID: 2294}
+      Script: {instanceID: 2304}
     - Class: 114
-      Script: {instanceID: 2342}
+      Script: {instanceID: 2352}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2564}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2578}
+      Script: {instanceID: 2588}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2734}
+      Script: {instanceID: 2744}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2764}
     - Class: 114
-      Script: {instanceID: 2798}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 2840}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2964}
+      Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 2992}
+      Script: {instanceID: 3004}
     - Class: 114
-      Script: {instanceID: 3062}
+      Script: {instanceID: 3076}
     - Class: 114
-      Script: {instanceID: 3220}
+      Script: {instanceID: 3236}
     - Class: 114
-      Script: {instanceID: 3460}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3580}
+      Script: {instanceID: 3598}
     - Class: 114
-      Script: {instanceID: 3656}
+      Script: {instanceID: 3674}
     - Class: 114
-      Script: {instanceID: 3944}
+      Script: {instanceID: 3966}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 4080}
+      Script: {instanceID: 4102}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 4242}
+      Script: {instanceID: 4266}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 4338}
     - Class: 114
-      Script: {instanceID: 4330}
+      Script: {instanceID: 4356}
     - Class: 114
-      Script: {instanceID: 4354}
+      Script: {instanceID: 4380}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4500}
     - Class: 114
-      Script: {instanceID: 4616}
+      Script: {instanceID: 4612}
     - Class: 114
-      Script: {instanceID: 4646}
+      Script: {instanceID: 4644}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4674}
     - Class: 114
-      Script: {instanceID: 4800}
+      Script: {instanceID: 4796}
     - Class: 114
-      Script: {instanceID: 47080}
+      Script: {instanceID: 4798}
+    - Class: 114
+      Script: {instanceID: 4836}
+    - Class: 114
+      Script: {instanceID: 22452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,6 +201,8 @@ ScriptsOnlyBuild:
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 193
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -243,7 +255,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 47ab629ddb765423c9c8366dee9a3e08
+      Hash: ef5c890d3993c9a321a0d5f3985190fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartMenu
@@ -303,10 +315,22 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
+      Hash: 7299a528424874bcf6b5736b5305ac37
+    assemblyName: NavMeshComponents.dll
+    namespaceName: UnityEngine.AI
+    className: NavMeshModifierVolume
+  - hash:
+      serializedVersion: 2
       Hash: f542c1afca5bb4022f91fdda19b8d622
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: DepthOfField
+  - hash:
+      serializedVersion: 2
+      Hash: 8d4458b476a9a4dd8df843a849fcfffa
+    assemblyName: NavMeshComponents.dll
+    namespaceName: UnityEngine.AI
+    className: NavMeshSurface
   - hash:
       serializedVersion: 2
       Hash: 27cc493b3c4ff5be3040d4850d3c03ac
@@ -363,7 +387,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 584beb25c911f20ab47aa1eeaf182d55
+      Hash: 27d363b91235aa656fc6ba3b854146c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TerrainData
@@ -489,6 +513,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 2b19be13f00df62e6d4d4f5539bcad51
+    assemblyName: NavMeshComponents.dll
+    namespaceName: UnityEngine.AI
+    className: NavMeshModifier
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -507,6 +537,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 17746d8046bc41e78414274a528899a1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MonsterController
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -519,7 +555,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: 0beb0936964056d3fbebce2df1b73bb4
+      Hash: 1640818b02f65fdcf0f37d684ee23164
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Flickering
@@ -795,7 +831,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: b9a9302e9abb8350732c34c2b8265336
+      Hash: 41f4fa67310a3cf2c4908d47bb7fff58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TerrainGenerator
@@ -805,6 +841,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: ScreenSpaceReflections
+  - hash:
+      serializedVersion: 2
+      Hash: cc5925138614d0bf8d095e95799d9904
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadingMenu
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -819,7 +861,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 057b5d0608e8f22c6dbc0430e3f78a25
+      Hash: a07c2e50962a741b918cb2e954f88b25
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FirstPerson
@@ -843,10 +885,22 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 59e831c39bc984130b2c2afd55d6a1b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GenerateWorld
+  - hash:
+      serializedVersion: 2
       Hash: d6fc8d3165070298511ec776ea575626
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessResources
+  - hash:
+      serializedVersion: 2
+      Hash: c8c672fee8a258266e51b55a210b8083
+    assemblyName: NavMeshComponents.dll
+    namespaceName: UnityEngine.AI
+    className: NavMeshLink
   - hash:
       serializedVersion: 2
       Hash: ac6acd886c54c48c599ab5fed5781ea7

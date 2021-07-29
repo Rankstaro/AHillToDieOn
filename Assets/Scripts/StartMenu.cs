@@ -62,15 +62,15 @@ public class StartMenu : NetworkBehaviour
         transport.ConnectPort = port;
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
 
+        GameObject worldGenerator = Instantiate(worldGeneratorPrefab);
+        NetworkManager.Singleton.StartHost(new Vector3(0, 10, 0), Quaternion.identity);
+
         hostMenu.SetActive(false);
         menuCamera.SetActive(false);
         title.SetActive(false);
         menuWorld.SetActive(false);
         music.mute = true;
         PauseMenu.Resume();
-
-        GameObject worldGenerator = Instantiate(worldGeneratorPrefab);
-        NetworkManager.Singleton.StartHost(new Vector3(0, 5, 0), Quaternion.identity);
     }
 
     public void HostBack()

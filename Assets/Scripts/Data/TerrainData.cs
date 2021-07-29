@@ -7,6 +7,7 @@ public class TerrainData : UpdatableData
 {
     public bool flatshading;
     public float meshHeightMultiplier;
+    public float scale;
     public AnimationCurve meshHeightCurve;
 
     public float minHeight

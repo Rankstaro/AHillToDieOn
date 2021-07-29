@@ -6,7 +6,6 @@ using MLAPI;
 
 public class GenerateWorld : MonoBehaviour
 {
-    public NavMeshSurface surface;
     public GameObject worldPrefab;
     [System.NonSerialized]
     public GameObject worldInstance;

@@ -42,7 +42,7 @@ public class FirstPerson : NetworkBehaviour
 	{
 		cam = camTrans.GetComponent<Camera>();
 
-		if (IsLocalPlayer)//!
+		if (!IsLocalPlayer)
 		{
 			camTrans.GetComponent<AudioListener>().enabled = false;
 			cam.enabled = false;
@@ -64,8 +64,8 @@ public class FirstPerson : NetworkBehaviour
 
 	void Update()
 	{
-		//if (IsLocalPlayer)
-		//{
+		if (IsLocalPlayer)
+		{
 			if (Mathf.Abs(moveDir.x) > 0.1f || Mathf.Abs(moveDir.z) > 0.1f) moving = true;
 			else moving = false;
 
@@ -91,6 +91,7 @@ public class FirstPerson : NetworkBehaviour
 				Run();
 				Jump();
 				MovePlayer();
+				if (!bobDisabled) HeadBob();
 			}
 			else if (jumping)
 			{
@@ -98,8 +99,7 @@ public class FirstPerson : NetworkBehaviour
 				MovePlayer();
 			}
 
-			if (!bobDisabled) HeadBob();
-		//}
+		}
 	}
 
 	public void MoveCamera()
@@ -206,7 +206,7 @@ public class FirstPerson : NetworkBehaviour
 	}
 	public void Look()
 	{
-		Quaternion lookRotation = Quaternion.Euler(0, 120, 0);
+		Quaternion lookRotation = Quaternion.Euler(0, 150, 0);
 		if (cam.transform.localRotation.y < 0.005)
 		{
 			camRotation = Quaternion.Euler(cam.transform.localRotation.x * 100, 0, 0);
